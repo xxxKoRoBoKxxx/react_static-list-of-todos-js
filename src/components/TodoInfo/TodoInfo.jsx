@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { UserInfo } from '../UserInfo/UserInfo';
 
 export const TodoInfo = ({ todo }) => {
   const { user, completed, title } = todo;
@@ -9,11 +10,7 @@ export const TodoInfo = ({ todo }) => {
     >
       <h2 className="TodoInfo__title">{title}</h2>
 
-      {user && (
-        <a className="UserInfo" href={user.email}>
-          {user.name}
-        </a>
-      )}
+      <UserInfo user={user} />
     </article>
   );
 };
